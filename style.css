@@ -1,0 +1,642 @@
+:root {
+    --image-width: 900px; 
+    --image-height: 500px;
+    --gap-between-images: 10px; /* Adjust the gap between images */
+}
+
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in element widths */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
+
+nav {
+    position: absolute;
+    padding: 1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 1vw;
+}
+
+nav ul li a::before, nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+    left: 50%;
+    transform: translateX(-60%);
+}
+
+nav ul li a::after {
+    right: 50%;
+    transform: translateX(60%);
+}
+
+nav ul li a.active::before, nav ul li a.active::after, nav ul li a:hover::before, nav ul li a:hover::after {
+    width: 80%;
+}
+
+.active::before, .active::after {
+    width: 80%;
+}
+
+.ontop {
+    padding: 0 15vw 5vw;
+    position: absolute; /* Use absolute positioning */
+    bottom: 0; /* Position at the bottom of the .Image container */
+    left: 0; /* Position at the left of the .Image container */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    z-index: 1; /* Ensure it's above the image */
+}
+
+.Image {
+    background-color: #333;
+}
+
+.Image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.ontop img {
+    width: 20vw;
+    height: auto;
+    margin-bottom: 1vw; /* Add margin between image and button */
+}
+
+.container, .Image, .overviewContainer {
+    overflow: hidden; /* Prevent content from overflowing parent containers */
+}
+
+.Image {
+    position: relative; /* Add relative positioning */
+    display: flex;
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+.ontop button {
+    position: relative;
+    z-index: 0; /* Lower z-index to position the button beneath the image */
+    padding: 1vw 1.5vw;
+    background-color: rgba(27, 26, 27, 0.6);
+    border: 1px solid gray;
+    border-radius: 2px;
+    color: white;
+    font-weight: 1vw;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.ontop button:hover {
+    background-color: rgba(27, 26, 27, 0.8);
+}
+
+@media screen and (max-width: 1100px) {
+    .sidepiece {
+        display: none;  
+    }
+}
+
+@media screen and (max-width: 1068px) {
+    nav ul li a {
+        font-size: medium;
+    }
+    .ontop {
+        padding: 0 10vw 5vw;
+    }
+    nav {
+        padding-top: 2vw;
+    }
+}
+
+@media screen and (max-width: 800px) {   
+    nav ul li a {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        display: flex; /* Ensure flexbox layout for easier positioning */
+        justify-content: flex-start; /* Align the nav items to the left */
+        padding-left: 10px; /* Add a small left padding for spacing */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: flex-start; /* Align the links to the left */
+    }
+
+    nav ul li {
+        margin-bottom: 5px; /* Add spacing between items */
+        margin-right: 0; /* Remove horizontal spacing */
+    }
+
+    nav ul li a {
+        font-size: 12px; /* Ensure readable font size */
+    }
+}
+
+.Text {
+    text-align: center;
+}
+
+.Text h1, .Text p {
+    color: white;
+}
+
+.Text h1 {
+    position: relative;
+    display: inline-block;
+    text-decoration: none; /* Remove default underline */
+}
+
+.Text h1::before,
+.Text h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: white; /* Change to desired underline color */
+    transition: transform 0.3s ease; /* Add animation for the transition */
+}
+
+.Text h1::before {
+    transform: scaleX(1); /* Initially show the underline */
+    transform-origin: left;
+}
+
+.Text h1::after {
+    transform: scaleX(1); /* Initially show the underline */
+    transform-origin: right;
+}
+
+.Text h1:hover::before,
+.Text h1:hover::after {
+    transform: scaleX(0); /* Shrink the underline from outside to inside on hover */
+    transition-delay: 0.15s; /* Add delay to create an outside-in effect */
+}
+
+.container {
+    background-color: #333;
+    gap: 10px;
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    padding-bottom: 50px;
+}
+
+.container img {
+    width: 10%;
+    height: auto;
+}
+
+.UImage {
+    flex-direction: column;
+    align-items: center;
+}
+
+.underdiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.image1 {
+    max-width: var(--image-width);
+    max-height: var(--image-height);
+}
+
+.image1 {
+    position: relative; /* Add relative positioning */
+    overflow: hidden; /* Ensure child elements respect boundaries */
+    margin: 0;
+    padding: 0;
+    border: 1px solid gray;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.innerdiv {
+    position: absolute; /* Add absolute positioning */
+    bottom: 3vw; /* Adjust bottom position as needed */
+    left: 3vw; /* Adjust left position as needed */
+    color: white;
+    display: inline-block;
+}
+
+.innerdiv img {
+    width: 40%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.innerdiv button {
+    display: block; /* Ensure the button is displayed as a block element */
+    margin-top: 1vw; /* Adjust the margin to create space between the image and the button */
+}
+
+.image1, .image2, .image3 {
+    position: relative; /* Add relative positioning */
+    overflow: hidden; /* Ensure child elements respect boundaries */
+    margin: 0;
+    padding: 0;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.image1 .img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px 2px #282a2d;
+}
+
+.underdiv {
+    gap: var(--gap-between-images);
+}
+
+.underdiv .image2,
+.underdiv .image3 {
+    max-width: calc((var(--image-width) - var(--gap-between-images)) / 2);
+    max-height: calc((var(--image-height) - var(--gap-between-images)) / 2);
+}
+
+.image2 .img, .image3 .img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.image1 .img:hover, .image2 .img:hover, .image3 .img:hover {
+    transform: scale(1.2);
+}
+
+        .footer {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .footer .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .footer .social-links li {
+            margin: 0 15px;
+        }
+        .footer .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .footer .social-links a:hover {
+            transform: scale(1.2);
+        }
+        .footer .social-links a.instagram:hover {
+            color: #E1306C; /* Instagram pink */
+        }
+        .footer .social-links a.twitter:hover {
+            color: #1DA1F2; /* Twitter blue */
+        }
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 14px;
+        }
+
+.about {
+    text-align: center;
+    color: white;
+}
+
+.about h1 {
+    text-decoration: underline;
+}
+
+.overviewContainer {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0; /* Add padding for top and bottom spacing */
+    background-color: #f8f9fa; /* Light background for better contrast */
+}
+
+.overviewItem {
+    background-color: white;
+    width: 90%; /* Adjust width to be responsive */
+    max-width: 900px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin: 20px 0; /* Add margin for spacing between items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    border-radius: 8px; /* Round the corners for a modern look */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.overviewItem:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+.overviewItem img {
+    width: 300px;
+    height: auto;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 20px;
+    flex: 1; /* Allow text container to take remaining space */
+}
+
+.textContainer h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.textContainer p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+
+
+/* Additions for form styling */
+.formContainer {
+    background-color: #f8f9fa; /* Adjust background color as needed */
+    text-align: center; /* Center text content */
+    padding: 50px 0; /* Adjust padding as needed */
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adjust gap between image and form */
+}
+
+.contact-wrapper img {
+    width: 40%; /* Adjust width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+section.contact-us #contact-form {
+    max-width: 500px; /* Limit maximum width of the form */
+    padding: 20px; /* Add padding for spacing inside the form */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.contact-wrapper form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form items horizontally */
+}
+
+
+.contact-wrapper form {
+    flex: 1;
+}
+
+/* Rest of your existing CSS */
+
+/* Additions for form styling */
+
+section {
+    margin-bottom: 50px;
+}
+  
+section.contact-us #contact-form {
+    position: relative;
+    display: block;
+    width: 380px;
+    height: auto;
+    background-color: #fff;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+}
+  
+section.contact-us .section-heading {
+    position: relative; 
+    display: block;
+    margin: auto;
+}
+  
+.section-heading h4 {
+    line-height: 40px;
+    font-size: 28px;
+    font-weight: 900;
+    color: #dc8cdb;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+  
+input, textarea {
+    width: 100%;
+    position: relative;
+    display: block;
+    background-color: #f4f7fb;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    outline-color: #9e9e9e;
+}
+  
+input {
+    height: 40px;
+    padding: 0px 15px;
+}
+  
+textarea {
+    min-height: 140px;
+    max-height: 180px;
+    padding: 15px;
+    resize: none;
+}
+  
+.contact-us span {
+    height: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+  
+.valid-info-name, .valid-info-email, .valid-info-message{
+    display: inline-block;
+    font-size: 13px;
+    margin: 5px 2px;
+}
+  
+.valid {
+    border: 2px solid green;
+    outline-color: green;
+}
+  
+.invalid {
+    border: 2px solid red;
+    outline-color: red;
+}
+  
+.btn {
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#form-submit {
+    position: relative;
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgb(219,138,222);
+    background: linear-gradient(-145deg, rgba(219,138,222,1) 0%, rgba(246,191,159,1) 100%);
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+
+.char-count {
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1100px) {
+    .sidepiece {
+        display: none;  
+    }
+}
+
+@media screen and (max-width: 1068px) {
+    nav ul li a {
+        font-size: medium;
+    }
+    .ontop {
+        padding: 0 10vw 5vw;
+    }
+    .overviewItem:nth-child(2) {
+        flex-direction: column;
+    }
+
+    .Image img {
+        width: 150%;
+        height: auto;
+    }
+    .ontop img {
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ontop {
+        padding: 0 5vw 5vw;
+        bottom: 10%;
+    }
+    nav ul li a {
+        font-size: small;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    section.contact-us #contact-form {
+        width: 70%;
+        height: auto;
+    }
+    .innerdiv img {
+        height: 20vw; /* Increase height relative to viewport width for better visibility */
+        width: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ontop {
+        padding: 0 3vw 5vw;
+    }
+    .footer {
+        font-size: 12px;
+    }
+    .overviewItem {
+        flex-direction: column;
+        align-items: center;
+    }
+    .overviewItem img {
+        width: 100%;
+        height: auto;
+    }
+}

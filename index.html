@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul id="top">
+            <li><a href="#top" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <div class="Image">
+            <img src="">
+            <div class="ontop">
+                <img src="">
+                <a href="#learnmore"></ahref><button href="#section-1">LEARN MORE</button></a>
+            </div>
+        </div>
+        <div id="learnmore" class="container">
+            <div class="UImage">
+                <div>
+                    <div class="image1">
+                        <img class="img" src="" alt="Big Image" class="big-image">
+                        <div class="innerdiv">
+                            <a href="#about"><img src=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="underdiv">
+                    <div class="image2">
+                        <img class="img" src="" alt="Small Image 1" class="small-image">
+                    </div>
+                    <div class="image3">
+                        <img class="img" src="" alt="Small Image 2" class="small-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="overviewContainer">
+        <div class="overviewItem">
+            <img src="img/1.png" alt="Image 1">
+            <div class="textContainer">
+                <h1>Netchix</h1>
+                <p>A Faithful Recreation of Netflix, with the carousel</p>
+                <p>without the use of ReactJS, but with custom JS code built</p>
+                <p>from the ground up.</p>
+                <p>Made with interactive experience for the user with</p>
+                <p>live mute and play buttons on the display trailer on</p>
+                <p>the front page, display a live carousel so that the user</p>
+                <p>can experiance ease of use and enjoyment.</p>
+                <p>This site was designed with HTML, CSS and JS.</p>
+            </div>
+        </div>
+        <div class="overviewItem">
+            <img src="img/2.png" alt="Image 2">
+            <div class="textContainer">
+                <h1>Business Site</h1>
+                <p>Business site for the packages for the Client to buy and</p>
+                <p>and use to their workflow, built beautifuly with HTML, CSS</p>
+                <p>and JS. This site is designed for the clients to understand what</p>
+                <p>they will get from the bussiness and how they opperate, allowing the</p>
+                <p>client to make their own choice.</p>
+            </div>
+        </div>
+        <div class="overviewItem">
+            <img src="img/3.png" alt="Image 3">
+            <div class="textContainer">
+                <h1>E-Commerce</h1>
+                <p>A store built for e-commerce and showing of to the user</p>
+                <p>what the store is about and what it sells, in a way that provides</p>
+                <p>a of inticing the users to buy something that they like the look of.</p>
+                <p>Also mobile responsive, to allow people on all devices to buy from the store</p>
+                <p>increasing the demographic and the revenue from the store.</p>
+                <p>Made with ReactJS, Typescript, HTML and CSS.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="formContainer">
+        <section class="contact-us" id="contact-section">
+            <div class="contact-wrapper">
+                <form id="contact-form" action="save-message.php" method="POST">
+                    <div class="section-heading">
+                        <img src="img/velope.png" alt="Envelope">
+                    </div>
+                    <div class="inputField">
+                        <input type="text" name="name" id="name" placeholder="Your name" autocomplete="on" required>
+                        <span class="valid-info-name"></span>
+                    </div>
+                    <div class="inputField">
+                        <input type="email" name="email" id="email" placeholder="Your email" required>
+                        <span class="valid-info-email"></span>
+                    </div>
+                    <div class="inputField">
+                        <textarea name="message" id="message" placeholder="Your message (max 1000 characters)"></textarea>
+                        <span class="valid-info-message"></span>
+                        <div class="char-count">Characters left: <span id="char-count">500</span></div>
+                    </div>
+                    <div class="inputField btn">
+                        <button type="submit" id="form-submit" class="main-gradient-button">Send a message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <ul class="social-links">
+            <li><a href="https://www.instagram.com/coderflynn/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://x.com/codertheflynn" class="twitter" target="_blank"><i class="fab fa-x"></i></a></li>
+        </ul>
+        <p>&copy; 2025 Flynn. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
